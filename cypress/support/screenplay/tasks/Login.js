@@ -12,6 +12,11 @@ class Login {
         return new Login(email, password);
     }
 
+    // Login usando dados de uma persona (email e password)
+    static withPersona(persona){
+        return new Login(persona.email, persona.password);
+    }
+
     performAs(actor){
         return actor.attemptsTo(
             Type.theText(this.email).into(LoginPage.emailField),

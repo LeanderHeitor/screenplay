@@ -13,6 +13,7 @@ class VerifySubmodules {
         return new VerifySubmodules(['Produção em Grupo', 'Produção Individual']);
     }
 
+
     checkAsExpected(actor) {
         const cy = actor.using('BrowseTheWeb').cy;
         

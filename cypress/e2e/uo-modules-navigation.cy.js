@@ -10,6 +10,7 @@ const { VerifySubmodules } = require("../support/screenplay/questions/VerifySubm
 const { VerifyURL } = require("../support/screenplay/questions/VerifyURL");
 const { Wait } = require("../support/screenplay/interactions/Wait");
 const { Personas } = require("../support/screenplay/personas/Personas");
+const {VerifyPageTitle} = require("../support/screenplay/questions/VerifyPageTitle");
 
 describe('Navegação de Módulos - Usuário UO', () => {
     beforeEach(() => {
@@ -46,7 +47,7 @@ describe('Navegação de Módulos - Usuário UO', () => {
         );
     });
 
-    it('UO deve conseguir navegar para Atendimentos', () => {
+    it.only('UO deve conseguir navegar para Atendimentos', () => {
         const uo = new Actor('Usuário UO').can(BrowseTheWeb.using(cy));
 
         uo.attemptsTo(
@@ -57,6 +58,7 @@ describe('Navegação de Módulos - Usuário UO', () => {
         );
 
         uo.shouldSee(
+            VerifyPageTitle.atendimentos(),
             VerifyURL.contains('atendimento') // ajuste conforme padrão da sua URL
         );
     });

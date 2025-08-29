@@ -24,10 +24,9 @@ class VerifyModuleLinks {
         return new VerifyModuleLinks(uoModules);
     }
 
-    // Para admin - você pode ajustar com os módulos reais que admin vê
+    // admin modules
     static forAdminUser() {
-        // Substitua pelos módulos reais que admin vê na sua aplicação
-        const adminModules = []; // será preenchido conforme você descobrir
+        const adminModules = []; 
         return new VerifyModuleLinks(adminModules);
     }
 

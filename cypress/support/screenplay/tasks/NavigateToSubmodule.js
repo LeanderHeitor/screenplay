@@ -18,9 +18,8 @@ class NavigateToSubmodule {
         // Aguarda submódulo aparecer e clica
         cy.get('[data-testid="submodule-card"]')
           .contains(this.submoduleName)
-          .should('be.visible')
-          .click();
-        
+          .should('be.visible').click()
+        cy.wait(2000)
         return actor;
     }
 }
